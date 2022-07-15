@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>App Name: Coding Challenge By Jacob Visick</title>
+    <title>Hundo: Coding Challenge By Jacob Visick</title>
     <!-- Required meta tags -->
     <meta
       name="viewport"
@@ -41,7 +41,7 @@
       <div class="container-fluid">
         <a class="navbar-brand" href="/index.html">
           <img src="/img/initials-white.svg" height="50" class="d-inline-block me-3" />
-          App Name</a>
+          Hundo</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -68,7 +68,7 @@
               <a class="nav-link" href="/code.html">The Code</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://github.com/jacobvisick">The Repo</a>
+              <a class="nav-link" href="https://github.com/jacobvisick/js-hundo">The Repo</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">About</a>
@@ -79,10 +79,13 @@
 
     <main class="content m-3">
       <div class="container mt-3">
-        <h1>THE APP UI GOES HERE</h1>
+        <h1>App UI</h1>
         <hr class="mx-5" />
-        <input type="text" id="message" placeholder="Enter a message..."/>
-        <button class="btn btn-primary" id="btn-submit">Display Message</button>
+        <input type="number" id="message" placeholder="Enter a number"/>
+        <button class="btn btn-primary" id="btn-submit">Display Numbers</button>
+        <div id="results">
+          <!--app output here-->
+        </div>
       </div>
     </main>
 
@@ -134,7 +137,7 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="/js/site.js"></script>
     <script>
-      document.getElementById("btn-submit").addEventListener("click", getValue);
+      document.getElementById("btn-submit").addEventListener("click", getNumbers);
     </script>
   </body>
 </html>

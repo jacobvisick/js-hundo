@@ -120,3 +120,7 @@ nav li {
 }
 
 /* button overrides end */
+
+#appLogo {
+  border-radius: 15px;
+}
