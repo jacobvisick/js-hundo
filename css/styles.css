@@ -1,0 +1,122 @@
+:root {
+  --jv-dark-color: #292929;
+  --jv-light-color: #dfe3ef;
+  --jv-primary-color: #001e43;
+  --jv-secondary-color: #ff993b;
+
+  --jv-logo-black: #000000;
+  --jv-logo-darker: #111111;
+  --jv-logo-dark: #2a2a2a;
+  --jv-logo-darkish: rgba(42, 42, 42, 0.8);
+  --jv-logo-light: #dcdcdc;
+  --jv-logo-lighter: #f6f6f6;
+  --jv-logo-white: #ffffff;
+
+  --jv-nav-toggler-glow: rgba(220, 220, 220, 0.35);
+}
+
+/* footer */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1 0 auto;
+}
+
+.footer {
+  flex-shrink: 0;
+  background: var(--jv-logo-light);
+}
+
+/* navbar */
+#mainNav {
+  background: var(--jv-logo-dark);
+}
+
+#mainNav button {
+  border-color: var(--jv-logo-light);
+}
+
+.navbar-toggler-icon-jv {
+  color: var(--jv-logo-light);
+}
+
+.navbar-toggler {
+  color: var(--jv-nav-toggler-glow) !important;
+}
+
+/* checklist */
+
+.checklist {
+  list-style-type: none;
+}
+
+.checklist > li i {
+  color: var(--jv-logo-dark);
+}
+
+/* checklist end */
+
+.devicons {
+  font-size: 2.5rem;
+}
+
+nav li {
+  transition: align-self;
+}
+
+.logo-muted {
+  opacity: 0.5;
+}
+
+.social {
+  font-size: 2rem;
+}
+
+.social > a {
+  filter: grayscale(100%);
+  opacity: 0.5;
+  transition: grayscale, 0.5s;
+}
+
+.social > a:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+/* button overrides */
+.btn-primary {
+  color: var(--jv-logo-light);
+  background-color: var(--jv-logo-dark);
+  border-color: var(--jv-logo-white);
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+  filter: brightness(1.1) !important;
+  background-color: var(--jv-logo-darkish);
+  border-color: var(--jv-logo-darker);
+}
+
+.btn-outline-primary {
+  color: var(--jv-logo-dark);
+  border-color: var(--jv-logo-darker);
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:active,
+.btn-outline-primary:focus {
+  filter: brightness(1.1);
+  background-color: var(--jv-logo-darkish);
+  border-color: var(--jv-logo-darker);
+}
+
+/* button overrides end */
