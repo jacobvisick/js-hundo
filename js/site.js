@@ -4,11 +4,11 @@ function getNumbers(e) {
   let stop = parseInt(document.querySelector('#stopValue').value);
 
   // guard from non-integer inputs
-  if (!Number.isInteger(start) || !Number.isInteger(stop)) {
+  if (!Number.isInteger(start) || !Number.isInteger(stop) || start >= stop) {
     Swal.fire({
       backdrop: false,
       title: 'Oh no!',
-      text: 'You can only use numbers',
+      text: 'You can only use numbers and our start value must be lower than end value.',
     });
 
     // exit function if we have bad input
