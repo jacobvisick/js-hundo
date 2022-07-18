@@ -124,3 +124,14 @@ nav li {
 #appLogo {
   border-radius: 15px;
 }
+
+.odd {
+  font-weight: bold;
+  font-size: 2rem;
+  color: red;
+}
+
+.even {
+  font-size: 1.5rem;
+  color: green;
+}

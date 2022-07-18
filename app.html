@@ -81,7 +81,9 @@
       <div class="container mt-3">
         <h1>Hundo</h1>
         <h5>Generate a list of numbers from 1-100 and display them on the page</h5>
-        <p>Or, change the start and stop yourself using the inputs below.</p>
+        <p>Or, change the start and stop yourself using the inputs below. Numbers will
+          be styled <span class="even">EVEN</span> and <span class="odd">ODD</span>
+        </p>
         <hr class="mx-5" />
         <div class="row row-cols-1">
           <div class="col">
@@ -94,6 +96,7 @@
           </div>
         </div>
         <button class="btn btn-primary" id="btn-submit">Display Numbers</button>
+        <button class="btn btn-primary" id="btn-submit-reverse">Display Numbers in Reverse</button>
         <div>
           <div class="row" id="results"></div>
         </div>
@@ -149,6 +152,7 @@
     <script src="/js/site.js"></script>
     <script>
       document.getElementById("btn-submit").addEventListener("click", getNumbers);
+      document.getElementById("btn-submit-reverse").addEventListener("click", getNumbers);
     </script>
   </body>
 </html>

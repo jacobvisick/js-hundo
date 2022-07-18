@@ -1,5 +1,5 @@
 // collect the inputs - CONTROLLER
-function getNumbers() {
+function getNumbers(e) {
   let start = parseInt(document.querySelector('#startValue').value);
   let stop = parseInt(document.querySelector('#stopValue').value);
 
@@ -16,7 +16,10 @@ function getNumbers() {
   }
 
   let numbers = generateNumbers(start, stop);
-  displayValues(numbers);
+
+  e.target.id == 'btn-submit'
+    ? displayValues(numbers)
+    : displayValues(numbers.reverse());
 }
 
 // business logic - MODEL
@@ -34,16 +37,17 @@ function generateNumbers(start, stop) {
 // - bold the even numbers
 function displayValues(numbers) {
   resultDiv = document.getElementById('results');
+  resultDiv.innerHTML = '';
 
-  numbers.forEach((number, index) => {
+  numbers.forEach((number) => {
     let element = document.createElement('div');
     element.classList.add('col');
     element.innerText = number;
 
-    // bold the evens with bootstrap
-    if (index % 2 === 0) {
-      element.classList.add('fw-bold');
-    }
+    // style even or odd
+    number % 2 === 0
+      ? element.classList.add('even')
+      : element.classList.add('odd');
 
     resultDiv.appendChild(element);
   });
