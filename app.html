@@ -79,13 +79,23 @@
 
     <main class="content m-3">
       <div class="container mt-3">
-        <h1>App UI</h1>
+        <h1>Hundo</h1>
+        <h5>Generate a list of numbers from 1-100 and display them on the page</h5>
+        <p>Or, change the start and stop yourself using the inputs below.</p>
         <hr class="mx-5" />
-        <input type="number" id="startValue" placeholder="Start count at..."/>
-        <input type="number" id="stopValue" placeholder="End count at..."/>
+        <div class="row row-cols-1">
+          <div class="col">
+            <label for="startValue">Start count at: </label>
+            <input type="number" id="startValue" value="1"/>
+          </div>
+          <div class=" col my-3">
+            <label for="stopValue">End count at: </label>
+            <input type="number" id="stopValue" value="100"/>
+          </div>
+        </div>
         <button class="btn btn-primary" id="btn-submit">Display Numbers</button>
-        <div id="results">
-          <!--app output here-->
+        <div>
+          <div class="row" id="results"></div>
         </div>
       </div>
     </main>
