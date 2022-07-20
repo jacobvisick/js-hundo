@@ -86,12 +86,58 @@
           <div class="col-12 col-lg-8">
             <pre class="line-numbers">
               <code class="language-javascript">
-                function getValue() {
-                  let msg = document.getElementById("message").value;
-                  Swal.fire({
-                    backdrop: false,
-                    title: "Hundo",
-                    text: msg,
+                // collect the inputs
+                function getNumbers(e) {
+                  // collect start and stop from user's input
+                  let start = parseInt(document.querySelector('#startValue').value);
+                  let stop = parseInt(document.querySelector('#stopValue').value);
+                
+                  // guard from non-integer inputs
+                  if (!Number.isInteger(start) || !Number.isInteger(stop) || start >= stop) {
+                    Swal.fire({
+                      backdrop: false,
+                      title: 'Oh no!',
+                      text: 'You can only use numbers and our start value must be lower than end value.',
+                    });
+                
+                    // exit function if we have bad input
+                    return;
+                  }
+                
+                  let numbers = generateNumbers(start, stop);
+                
+                  e.target.id == 'btn-submit' ? 
+                    displayValues(numbers) : 
+                    displayValues(numbers.reverse());
+                }
+                
+                // create an array of the numbers
+                function generateNumbers(start, stop) {
+                  let numbers = [];
+                
+                  for (let i = start; i <= stop; i++) {
+                    numbers.push(i);
+                  }
+                
+                  return numbers;
+                }
+                
+                //display the list of numbers
+                function displayValues(numbers) {
+                  resultDiv = document.getElementById('results');
+                  resultDiv.innerHTML = '';
+                
+                  numbers.forEach((number) => {
+                    let element = document.createElement('div');
+                    element.classList.add('col');
+                    element.innerText = number;
+                
+                    // style even or odd
+                    number % 2 === 0 ? 
+                      element.classList.add('even') :
+                      element.classList.add('odd');
+                
+                    resultDiv.appendChild(element);
                   });
                 }
               </code>
@@ -99,9 +145,21 @@
           </div>
           <div class="col-12 col-lg-4 p-3">
             <h3>The Code</h3>
-            <p>The code uses the <code>getValue</code> function to 
-              take the value entered into the message box and create an
-              alert using <code>SweetAlert</code> using that text.</p>
+            <p>The code uses three functions to follow the MVC pattern.
+              I used the <code>getNumbers</code> function to collect the user's
+              input with <code>start</code> and <code>stop</code>. Then, pass those
+              values to <code>generateNumbers</code>.
+              <br><br>
+              The <code>generateNumbers</code> function uses a simple <code>for</code>
+              loop to create an array of all numbers between the <code>start</code> and
+              <code>stop</code> parameters, then return that array back to <code>generateNumbers</code>.
+              <br><br>
+              Finally, <code>getNumbers</code> receives the array of numbers and passes them to
+              <code>displayValues</code> - determining whether to reverse the numbers or not by checking
+              which button the user pressed. <code>displayValues</code> iterates through the array of numbers using
+              <code>forEach</code> and creates an HTML element for each value to add to the page. This
+              is also where we use separate CSS classes to style even or odd numbers.
+            </p>
           </div>
         </div>
       </div>

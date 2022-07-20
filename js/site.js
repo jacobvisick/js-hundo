@@ -1,5 +1,6 @@
-// collect the inputs - CONTROLLER
+// collect the inputs
 function getNumbers(e) {
+  // collect start and stop from user's input
   let start = parseInt(document.querySelector('#startValue').value);
   let stop = parseInt(document.querySelector('#stopValue').value);
 
@@ -17,12 +18,10 @@ function getNumbers(e) {
 
   let numbers = generateNumbers(start, stop);
 
-  e.target.id == 'btn-submit'
-    ? displayValues(numbers)
-    : displayValues(numbers.reverse());
+  e.target.id == 'btn-submit' ? displayValues(numbers) : displayValues(numbers.reverse());
 }
 
-// business logic - MODEL
+// create an array of the numbers
 function generateNumbers(start, stop) {
   let numbers = [];
 
@@ -33,8 +32,7 @@ function generateNumbers(start, stop) {
   return numbers;
 }
 
-//display the list of numbers - VIEW
-// - bold the even numbers
+//display the list of numbers
 function displayValues(numbers) {
   resultDiv = document.getElementById('results');
   resultDiv.innerHTML = '';
